@@ -13,10 +13,7 @@ const emit = defineEmits<{
 
 <template>
   <div
-    :class="[
-      'relative grid bg-slate-800 text-slate-50',
-      health.value < 1 && 'bg-red-900 text-red-300',
-    ]"
+    class="relative grid bg-slate-50 text-slate-900 dark:bg-slate-800 dark:text-slate-50"
   >
     <div class="grid place-items-center text-8xl">
       {{ health }}
