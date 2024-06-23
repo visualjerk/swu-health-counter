@@ -21,7 +21,7 @@ function reset() {
 </script>
 
 <template>
-  <div class="bg-slate-900 min-h-svh flex flex-col">
+  <div class="bg-slate-900 min-h-svh grid grid-rows-[1fr_auto_1fr]">
     <HealthCounter
       :health="playerOne.health"
       @heal="playerOne.heal"
