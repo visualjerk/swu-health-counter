@@ -17,9 +17,14 @@ export function useHealth({ id, initialHealth }: UseHealthProps) {
     health.value++
   }
 
+  function reset() {
+    health.value = initialHealth
+  }
+
   return {
     health: computed(() => health.value),
     damage,
     heal,
+    reset,
   }
 }
