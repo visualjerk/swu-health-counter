@@ -10,6 +10,9 @@ export function useHealth({ id, initialHealth }: UseHealthProps) {
   const health = useLocalStorage(id, initialHealth)
 
   function damage() {
+    if (health.value === 0) {
+      return
+    }
     health.value--
   }
 
