@@ -22,11 +22,24 @@ function reset() {
   playerTwo.reset()
 }
 
+let wakeLock: WakeLockSentinel | null = null
+async function startWakeLock() {
+  if (wakeLock != null) {
+    return
+  }
+
+  try {
+    wakeLock = await navigator.wakeLock.request()
+  } catch (err) {
+    console.error(err)
+  }
+}
+
 const darkMode = useDarkMode()
 </script>
 
 <template>
-  <div :class="darkMode.isOn.value && 'dark'">
+  <div :class="darkMode.isOn.value && 'dark'" @click="startWakeLock">
     <div
       class="min-h-svh grid grid-rows-[1fr_auto_1fr] bg-slate-100 dark:bg-slate-900"
     >
