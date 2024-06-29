@@ -10,9 +10,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'My Awesome App',
-        short_name: 'MyApp',
-        description: 'My Awesome App description',
+        name: 'Star Wars Unlimited Health Counter',
+        short_name: 'SWUHC',
+        description: 'Heatlh Counter for Star Wars Unlimited Bases',
       },
       pwaAssets: {
         preset,
